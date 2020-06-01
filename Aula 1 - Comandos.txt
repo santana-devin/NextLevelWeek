@@ -1,0 +1,58 @@
+Primeira aula do NLW.
+
+Criação do projeto Server
+
+// Cria a pasta server
+$ mkdir sever
+
+// Entra na pasta Server
+$ cd server
+
+// Inicindo um projeto node
+$ npm init -y
+
+// Criação da pasta NODE_MODULES que contem as libs do node
+$ npm install express
+
+// Instala a biblioteca types utilizada pelo modulo express
+$ npm install @types/express -D
+
+// Instala um excutavel para rodar typescript no node / roda em desenvolvimento
+$ npm install ts-node -D
+
+// Instala o modulo typescript utilizado como dependencia pelo ts_node
+$ npm install typescript -D
+ 
+// Iniciar um projeto typescript 
+$ npx tsc --init
+
+// NPX - Comando para excutar arquicos binarios
+// Executa o arquivo server como typescript
+$ npx ts-node src/server.ts
+
+// Instala o modulo ts-node-dev que é igual o nodemon do nodejs / Utilizado para escutar requisições 
+$ npm install ts-node-dev -D
+
+// Executa o arquivo server.ts 
+$ npx ts-node-dev src/server.ts
+
+
+
+Criando projeto WEB
+Comandos para criação do projeto react 
+
+npx create-react-app web --template=typescript
+
+// entrar na pasta do projeto
+cd web
+
+// Iniciar o projeto
+$ npm start
+
+
+
+
+
+
+
+
