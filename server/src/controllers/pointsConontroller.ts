@@ -8,51 +8,57 @@ class PointsController {
     const parsedIntens = String(itens).split(',').map(item => Number(item.trim()));
 
     const points = knex('points')
-    .join('points_itens', 'points.id', '=', 'points_itens.points_id')
-    .whereIn("points_itens.itens_id",parsedIntens)
-    .where('city',String(city))
-    .where('uf',String(uf))
-    .distinct()
-    .select('points.*');
-    
-    return response.json(points);
+    //.join('points_itens', 'points.id', '=', 'points_itens.points_id')
+    //.whereIn("points_itens.itens_id",parsedIntens)
+    //.where('city',String(city))
+    //.where('uf',String(uf))
+    //.distinct()
+    .select('*');
+//    console.log(points);
+    if(points){
+      return response.json(points);
+    }else{
+      return response.json({'message':'error'});
+    }
 
   }
 
 
   async create (request: Request, response: Response){
-    const {
+  
+        const {
       name,
       email,
       whatsapp,
       latitude,
       longitude,
       number,
-      cyti,
+      city,
       uf,
       itens
     } = request.body;
-  
+
     const trx = await knex.transaction();
     const point = {
-      image:'nametest',
+      image:'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
       name,
       email,
       whatsapp,
       latitude,
       longitude,
       number,
-      cyti,
+      city,
       uf
     };
+        
     const ids = await trx('points').insert(point);
   
-    const point_id = ids[0];
+    const points_id = ids[0];
   
-    const pointsItens = itens.map((iten_id:number) => {
+    const pointsItens = itens.map((itens_id:number) => {
         return {
-          iten_id,
-          point_id    
+          itens_id,
+          points_id    
         }
     })
   
@@ -61,7 +67,7 @@ class PointsController {
     await trx.commit();
     
     return response.json({
-      id:point_id,
+      id:points_id,
       ...point
     });
   

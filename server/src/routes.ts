@@ -1,15 +1,16 @@
 import express from  'express';
 
-import PointConteoller from './controllers/pointsConontroller';
+import PointsConteoller from './controllers/pointsConontroller';
 import ItensConteoller from './controllers/itensController';
 
 const routes = express.Router();
-const pointController = new PointConteoller();
+const pointsController = new PointsConteoller();
 const itensController = new ItensConteoller();
 
 routes.get('/itens', itensController.index);
 
-routes.post('points', pointController.create);
-routes.get('points', pointController.index);
-routes.get('points/:id', pointController.show);
+routes.post('/points', pointsController.create);
+routes.get('/points', pointsController.index);
+routes.get('/points/:id', pointsController.show);
+
 export default routes;
