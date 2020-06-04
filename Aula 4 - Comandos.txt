@@ -1,0 +1,23 @@
+Criando projeto WEB
+Comandos para criação do projeto react 
+
+npx create-react-app web --template=typescript
+
+// entrar na pasta do projeto
+cd web
+
+// Iniciar o projeto
+$ npm start
+
+
+$npm install react-icons
+
+npm install --save @types/react-router-dom
+
+npm install @types/react-router-dom -D
+
+
+,
+    "noImplicitAny": false
+
+
