@@ -8,11 +8,11 @@ class PointsController {
     const parsedIntens = String(itens).split(',').map(item => Number(item.trim()));
 
     const points = knex('points')
-    //.join('points_itens', 'points.id', '=', 'points_itens.points_id')
-    //.whereIn("points_itens.itens_id",parsedIntens)
-    //.where('city',String(city))
-    //.where('uf',String(uf))
-    //.distinct()
+    .join('points_itens', 'points.id', '=', 'points_itens.points_id')
+    .whereIn("points_itens.itens_id",parsedIntens)
+    .where('city',String(city))
+    .where('uf',String(uf))
+    .distinct()
     .select('*');
 //    console.log(points);
     if(points){
@@ -32,7 +32,6 @@ class PointsController {
       whatsapp,
       latitude,
       longitude,
-      number,
       city,
       uf,
       itens
@@ -46,7 +45,6 @@ class PointsController {
       whatsapp,
       latitude,
       longitude,
-      number,
       city,
       uf
     };
