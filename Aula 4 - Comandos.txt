@@ -1,23 +1,15 @@
-Criando projeto WEB
-Comandos para criação do projeto react 
+expo init mobile
+expo start
 
-npx create-react-app web --template=typescript
-
-// entrar na pasta do projeto
-cd web
-
-// Iniciar o projeto
-$ npm start
+npm install @react-navigation/native
+npm install @react-navigation/native
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 
 
-$npm install react-icons
+46:29
 
-npm install --save @types/react-router-dom
+npm install react-native-maps
+expo install expo-constants
+npm install react-native-svg
 
-npm install @types/react-router-dom -D
-
-
-,
-    "noImplicitAny": false
-
-
+1:18
